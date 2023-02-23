@@ -1,9 +1,9 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Application;
-using NUnit.Framework;
-
+using Domain;
+using Infrastructure;
 
 namespace ApplicationTests
 {

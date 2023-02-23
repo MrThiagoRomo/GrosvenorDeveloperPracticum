@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Application;
+using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Application
+namespace Infrastructure
 {
     public class Server : IServer
     {
@@ -12,7 +14,7 @@ namespace Application
         {
             _dishManager = dishManager;
         }
-        
+
         public string TakeOrder(string unparsedOrder)
         {
             if (string.IsNullOrEmpty(unparsedOrder))
@@ -25,7 +27,7 @@ namespace Application
             try
             {
                 Order order = ParseOrder(treatedOrder);
-                string timeOfDay = GetTimeOfDay(treatedOrder); 
+                string timeOfDay = GetTimeOfDay(treatedOrder);
                 List<Dish> dishes = _dishManager.GetDishes(order, timeOfDay);
                 string returnValue = FormatOutput(dishes);
                 return returnValue;

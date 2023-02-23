@@ -1,4 +1,4 @@
-﻿namespace Application
+﻿namespace Domain
 {
     /// <summary>
     /// Contains a dish by name and number of times the dish has been ordered

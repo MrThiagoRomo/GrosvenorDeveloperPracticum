@@ -1,4 +1,5 @@
 ﻿using Application;
+using Infrastructure;
 using NUnit.Framework;
 
 namespace ApplicationTests

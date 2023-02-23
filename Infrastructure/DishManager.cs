@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Application;
+using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Application
+namespace Infrastructure
 {
     public class DishManager : IDishManager
     {
@@ -48,7 +50,8 @@ namespace Application
                     DishName = orderName,
                     Count = 1
                 });
-            } else if (IsMultipleAllowed(order, timeOfDay))
+            }
+            else if (IsMultipleAllowed(order, timeOfDay))
             {
                 existingOrder.Count++;
             }
@@ -117,5 +120,6 @@ namespace Application
 
             }
         }
+
     }
 }
