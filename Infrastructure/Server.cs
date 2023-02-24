@@ -52,7 +52,7 @@ namespace Infrastructure
             };
 
             var orderItems = unparsedOrder.Split(',');
-            var filteredOrderItems = orderItems.Where((item, index) => index != 0).ToArray();
+            var filteredOrderItems = orderItems.Skip(1).ToArray();
             Array.Sort(filteredOrderItems);
             foreach (var orderItem in filteredOrderItems)
             {
